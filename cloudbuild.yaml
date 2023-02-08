@@ -1,0 +1,4 @@
+steps:
+# #Build the War
+- name: gcr.io/cloud-builders/mvn
+  args: ['deploy', '-DskipTests']
