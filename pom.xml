@@ -20,7 +20,31 @@
     <pdfbox.version>2.0.1</pdfbox.version>
     <orika-core.version>1.5.2</orika-core.version>
   </properties>
-
+  <!-- -->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-east1-maven.pkg.dev/wally-dev-365118/maven-repository</url>
+    </snapshotRepository>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-east1-maven.pkg.dev/wally-dev-365118/maven-repository</url>
+    </repository>
+  </distributionManagement>
+  <!--  -->
+  <repositories>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-east1-maven.pkg.dev/wally-dev-365118/maven-repository</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <!-- -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -134,4 +158,15 @@
     </dependency>
     
   </dependencies>
+  <!-- -->
+  <build>
+    <extensions>
+      <extension>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.0</version>
+      </extension>
+    </extensions>
+  </build>
+  <!-- -->
 </project>
